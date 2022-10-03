@@ -38,4 +38,4 @@ $ node generate_lod.mjs in.glb out.glb \
 
 ## Limitations
 
-This script is not guaranteed to work for all the glTF assets especially if they are complex or have extensions. Please edit the script on your end if it doesn't work for your assets.
+This script is not guaranteed to work for all the possible glTF assets especially if they are complex or have extensions. Please edit the script on your end if it doesn't work for your assets.
