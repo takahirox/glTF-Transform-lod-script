@@ -14,7 +14,7 @@ $ git clone https://github.com/takahirox/glTF-Transform-lod-script
 $ cd glTF-Transform-lod-script
 
 # Install dependencies
-$ npm install @gltf-transform/core @gltf-transform/functions meshoptimizer command-line-args
+$ npm install @gltf-transform/core @gltf-transform/functions @gltf-transform/extensions meshoptimizer command-line-args
 
 # Run
 $ node generate_lod.mjs in.glb out.glb \

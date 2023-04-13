@@ -15,6 +15,7 @@ import {
 } from '@gltf-transform/functions';
 import { MeshoptSimplifier } from 'meshoptimizer';
 import commandLineArgs from 'command-line-args';
+import { KHRTextureTransform } from '@gltf-transform/extensions';
 
 /******************************************************************************
  * Example implementation of MSFT_lod for glTF-Transform.
@@ -147,7 +148,7 @@ if (ratios.length !== errors.length ||
 
 await MeshoptSimplifier.ready;
 
-const io = new NodeIO().registerExtensions([LODExtension]);
+const io = new NodeIO().registerExtensions([KHRTextureTransform, LODExtension]);
 
 if (!options.interleaved) {
   io.setVertexLayout(VertexLayout.SEPARATE);
@@ -200,7 +201,7 @@ for (const mesh of document.getRoot().listMeshes()) {
           lodEmissiveTexture !== material.getEmissiveTexture() ||
           lodMetallicRoughnessTexture !== material.getMetallicRoughnessTexture() ||
           lodNormalTexture !== material.getNormalTexture() ||
-          lodOcclusionTexture !== material.getOcculusionTexture()) {
+          lodOcclusionTexture !== material.getOcclusionTexture()) {
           const lodMaterial = material.clone().setName(material.getName() + suffix);
           lodMaterial.setBaseColorTexture(lodBaseColorTexture);
           lodMaterial.setEmissiveTexture(lodEmissiveTexture);
